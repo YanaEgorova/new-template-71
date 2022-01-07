@@ -1,0 +1,141 @@
+.header__wrapper {
+    position: relative;
+    background-color: var(--first-brand-color);
+}
+.top-header {
+    padding: 2rem 0;
+    text-align: right;
+}
+.header__wrapper {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 9999999;
+    padding: 2rem 0;
+    transition: all 0.3s ease-in-out;
+    /* width: 10rem; */
+}
+.header-left {
+    width: 0;
+    transition: width .3s ease opacity 1s ease padding-right .3rem ease;
+    overflow: hidden;
+    opacity: 0;
+}
+.header-left.open-menu {
+    width: 100%;
+    opacity: 1;
+    padding-right: 3rem;
+}
+
+.header__wrapper .container {
+    height: 100%;
+    padding: 0 2rem;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+.header__btn {
+    width: 5rem;
+    height: 4rem;
+    position: relative;
+    z-index: 99999999;
+}
+.header__btn span {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+    height: .1rem;
+    background-color: var(--main-text-color);
+}
+.header__btn span::before, .header__btn span::after {
+   display: block;
+   content: '';
+   width: 100%;
+   height: .1rem;
+   background-color: var(--main-text-color);
+   position: absolute;
+   left: 0;
+}
+.header__btn span::before {
+    bottom: -2rem;
+}
+.header__btn span::after {
+    bottom: -1rem;
+}
+.header__logo {
+    margin-bottom: 5rem;
+    display: block;
+}
+.header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+.social-link__box {
+    margin-bottom: 5rem;
+}
+.social-link {
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    border: 0.1rem solid var(--main-text-color);
+    font-size: 0;
+    transition: all 0.3s ease-in-out;
+}
+.social-link-phone {
+    background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='891.024px' height='891.024px' viewBox='0 0 891.024 891.024' style='enable-background:new 0 0 891.024 891.024;' xml:space='preserve'%3E%3Cg%3E%3Cpath d='M2.8,180.875c46.6,134,144.7,286.2,282.9,424.399c138.2,138.2,290.4,236.301,424.4,282.9c18.2,6.3,38.3,1.8,52-11.8 l92.7-92.7l21.6-21.6c19.5-19.5,19.5-51.2,0-70.7l-143.5-143.4c-19.5-19.5-51.2-19.5-70.7,0l-38.899,38.9 c-20.2,20.2-52.4,22.2-75,4.6c-44.7-34.8-89-73.899-131.9-116.8c-42.9-42.9-82-87.2-116.8-131.9c-17.601-22.6-15.601-54.7,4.6-75 l38.9-38.9c19.5-19.5,19.5-51.2,0-70.7l-143.5-143.5c-19.5-19.5-51.2-19.5-70.7,0l-21.6,21.6l-92.7,92.7 C1,142.575-3.5,162.675,2.8,180.875z'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% auto;
+}
+.social-link-email {
+    background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 490 490' style='enable-background:new 0 0 490 490;' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cpath d='M295.2,257.8L251.4,295c-3.5,2.9-8.6,2.9-12,0l-43.8-37.1L16.7,409.1h456.6L295.2,257.8z'/%3E%3Cpolygon points='0,92.2 0,397.8 180.1,245 '/%3E%3Cpolygon points='16.7,80.9 245,274.6 473.3,80.9 '/%3E%3Cpolygon points='309.9,245 490,397.8 490,92.2 '/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% auto;
+    margin-bottom: 1rem;
+}
+.cart__btn {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+.cart__btn svg {
+    fill: var(--main-text-color);
+    width: 3rem;
+    display: block;
+    margin-right: 1rem;
+}
+.cart__span {
+    font-family: var(--title-font);
+    font-size: 2rem;
+}
+.nav__item:not(:last-child) {
+    margin-bottom: 2rem;
+}
+.nav__link {
+    font-size: 2rem;
+}
+@media screen and (min-width: 1024px) {
+    .header-left.open-menu {
+        min-width: 50rem;
+    }
+    .header__logo {
+        margin-bottom: 15rem;
+        font-size: 3rem;
+    }
+    .top-header .header__logo {
+        margin-bottom: 0;
+    }
+    .nav__item:not(:last-child) {
+        margin-bottom: 5rem;
+    }
+}
